@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://4552uoq3j4nn"]
+
+[ext_resource type="Script" path="res://NodeOne.gd" id="1_gx73k"]
+[ext_resource type="Script" path="res://NodeTwo.gd" id="2_tyipj"]
+[ext_resource type="Script" path="res://NodeThree.gd" id="3_0w65m"]
+
+[node name="Parent" type="Node3D"]
+
+[node name="NodeOne" type="CanvasLayer" parent="."]
+script = ExtResource("1_gx73k")
+
+[node name="NodeTwo" type="Node3D" parent="."]
+script = ExtResource("2_tyipj")
+
+[node name="NodeThree" type="Node3D" parent="."]
+script = ExtResource("3_0w65m")
+
+[node name="Continue" type="Button" parent="NodeThree"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -20.0
+offset_right = 50.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "continue"
+
+[connection signal="pressed" from="NodeThree/Continue" to="NodeTwo" method="manualEndTurn"]
