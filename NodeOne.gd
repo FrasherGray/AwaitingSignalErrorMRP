@@ -1,4 +1,4 @@
-extends Node
+extends CanvasLayer
 
 @onready var node2 = get_parent().get_node("NodeTwo")
 
