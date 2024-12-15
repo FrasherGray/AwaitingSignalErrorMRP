@@ -8,6 +8,6 @@ func _ready():
 
 func beginRound():
 	for i in range(3):
-		node2.beginNewTurn.rpc()
+		node2.beginNewTurn()
 		print("waiting for turn to end")
 		await node2.beginNextTurn
