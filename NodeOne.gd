@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node
 
 @onready var node2 = get_parent().get_node("NodeTwo")
 
@@ -8,6 +8,6 @@ func _ready():
 
 func beginRound():
 	for i in range(3):
-		node2.beginNewTurn.rpc() #empireTurnOrder is a PackedStringArray
+		node2.beginNewTurn.rpc()
 		print("waiting for turn to end")
 		await node2.beginNextTurn
