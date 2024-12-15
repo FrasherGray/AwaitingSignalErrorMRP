@@ -1,4 +1,4 @@
-extends Node3D
+extends Node2D
 
 signal beginNextTurn
 
@@ -7,7 +7,7 @@ signal beginNextTurn
 
 @rpc("any_peer", "call_local", "reliable")
 func beginNewTurn() -> void:
-		node3.takeTurn() #empire points to the node(s) of Script Three
+		node3.takeTurn()
 
 func endTurn():
 	print(is_instance_valid(node1))
